@@ -11,4 +11,6 @@ target 'MovieWiki' do
   pod 'KakaoSDKUser'  # 카카오 로그인, 사용자 관리
   pod 'KakaoSDKTalk'  # 친구, 메시지(카카오톡)
   pod 'naveridlogin-sdk-ios'
+
+  pod 'Tabman', '~> 2.11'
 end

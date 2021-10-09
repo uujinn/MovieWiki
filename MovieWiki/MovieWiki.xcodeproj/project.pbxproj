@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		0A9F056027116C52003E0BF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F055F27116C52003E0BF9 /* AppDelegate.swift */; };
 		0A9F056227116C52003E0BF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F056127116C52003E0BF9 /* SceneDelegate.swift */; };
-		0A9F056427116C52003E0BF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F056327116C52003E0BF9 /* ViewController.swift */; };
+		0A9F056427116C52003E0BF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F056327116C52003E0BF9 /* LoginViewController.swift */; };
 		0A9F056727116C52003E0BF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9F056527116C52003E0BF9 /* Main.storyboard */; };
 		0A9F056927116C53003E0BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9F056827116C53003E0BF9 /* Assets.xcassets */; };
 		0A9F056C27116C53003E0BF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9F056A27116C53003E0BF9 /* LaunchScreen.storyboard */; };
+		0A9F05742711F57A003E0BF9 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F05732711F57A003E0BF9 /* TabViewController.swift */; };
+		0A9F05762711F90A003E0BF9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F05752711F90A003E0BF9 /* SearchViewController.swift */; };
+		0A9F05782711FA79003E0BF9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F05772711FA79003E0BF9 /* HomeViewController.swift */; };
+		0A9F057A2711FB03003E0BF9 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F05792711FB03003E0BF9 /* MyPageViewController.swift */; };
 		8ABB6D5F89102C4CC100C4E2 /* Pods_MovieWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C3F75DD3B94BFE8EA9601F /* Pods_MovieWiki.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,11 +24,15 @@
 		0A9F055C27116C52003E0BF9 /* MovieWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9F055F27116C52003E0BF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A9F056127116C52003E0BF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0A9F056327116C52003E0BF9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0A9F056327116C52003E0BF9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0A9F056627116C52003E0BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A9F056827116C53003E0BF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A9F056B27116C53003E0BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9F056D27116C53003E0BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A9F05732711F57A003E0BF9 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		0A9F05752711F90A003E0BF9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0A9F05772711FA79003E0BF9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0A9F05792711FB03003E0BF9 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		C130AB75EECAE20BF9261164 /* Pods-MovieWiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieWiki.release.xcconfig"; path = "Target Support Files/Pods-MovieWiki/Pods-MovieWiki.release.xcconfig"; sourceTree = "<group>"; };
 		CB96F49A0912A8C4AB0D801B /* Pods-MovieWiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieWiki.debug.xcconfig"; path = "Target Support Files/Pods-MovieWiki/Pods-MovieWiki.debug.xcconfig"; sourceTree = "<group>"; };
 		D4C3F75DD3B94BFE8EA9601F /* Pods_MovieWiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieWiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +73,11 @@
 			children = (
 				0A9F055F27116C52003E0BF9 /* AppDelegate.swift */,
 				0A9F056127116C52003E0BF9 /* SceneDelegate.swift */,
-				0A9F056327116C52003E0BF9 /* ViewController.swift */,
+				0A9F056327116C52003E0BF9 /* LoginViewController.swift */,
+				0A9F05772711FA79003E0BF9 /* HomeViewController.swift */,
+				0A9F05732711F57A003E0BF9 /* TabViewController.swift */,
+				0A9F05792711FB03003E0BF9 /* MyPageViewController.swift */,
+				0A9F05752711F90A003E0BF9 /* SearchViewController.swift */,
 				0A9F056527116C52003E0BF9 /* Main.storyboard */,
 				0A9F056827116C53003E0BF9 /* Assets.xcassets */,
 				0A9F056A27116C53003E0BF9 /* LaunchScreen.storyboard */,
@@ -206,9 +218,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A9F056427116C52003E0BF9 /* ViewController.swift in Sources */,
+				0A9F05762711F90A003E0BF9 /* SearchViewController.swift in Sources */,
+				0A9F056427116C52003E0BF9 /* LoginViewController.swift in Sources */,
+				0A9F057A2711FB03003E0BF9 /* MyPageViewController.swift in Sources */,
 				0A9F056027116C52003E0BF9 /* AppDelegate.swift in Sources */,
 				0A9F056227116C52003E0BF9 /* SceneDelegate.swift in Sources */,
+				0A9F05742711F57A003E0BF9 /* TabViewController.swift in Sources */,
+				0A9F05782711FA79003E0BF9 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

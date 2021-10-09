@@ -12,7 +12,7 @@ import KakaoSDKCommon
 import NaverThirdPartyLogin
 import Alamofire
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     // 네이버 로그인
     let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
@@ -47,6 +47,10 @@ class ViewController: UIViewController {
             else {
                 print("loginWithKakaoAccount() success.")
                 
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabVC") as! TabViewController
+
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
                 //do something
                 _ = oauthToken
             }
@@ -112,7 +116,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: NaverThirdPartyLoginConnectionDelegate {
+extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
         // 로그인 버튼을 눌렀을 경우 열게 될 브라우저
         func oauth20ConnectionDidOpenInAppBrowser(forOAuth request: URLRequest!) {
 
