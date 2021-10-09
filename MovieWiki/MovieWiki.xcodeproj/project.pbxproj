@@ -13,6 +13,7 @@
 		0A9F056727116C52003E0BF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9F056527116C52003E0BF9 /* Main.storyboard */; };
 		0A9F056927116C53003E0BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9F056827116C53003E0BF9 /* Assets.xcassets */; };
 		0A9F056C27116C53003E0BF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9F056A27116C53003E0BF9 /* LaunchScreen.storyboard */; };
+		8ABB6D5F89102C4CC100C4E2 /* Pods_MovieWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C3F75DD3B94BFE8EA9601F /* Pods_MovieWiki.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		0A9F056827116C53003E0BF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A9F056B27116C53003E0BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9F056D27116C53003E0BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C130AB75EECAE20BF9261164 /* Pods-MovieWiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieWiki.release.xcconfig"; path = "Target Support Files/Pods-MovieWiki/Pods-MovieWiki.release.xcconfig"; sourceTree = "<group>"; };
+		CB96F49A0912A8C4AB0D801B /* Pods-MovieWiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieWiki.debug.xcconfig"; path = "Target Support Files/Pods-MovieWiki/Pods-MovieWiki.debug.xcconfig"; sourceTree = "<group>"; };
+		D4C3F75DD3B94BFE8EA9601F /* Pods_MovieWiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieWiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ABB6D5F89102C4CC100C4E2 /* Pods_MovieWiki.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				0A9F055E27116C52003E0BF9 /* MovieWiki */,
 				0A9F055D27116C52003E0BF9 /* Products */,
+				9AE22511860292C68C746E79 /* Pods */,
+				CAC914E56586EB22C88A3C04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = MovieWiki;
 			sourceTree = "<group>";
 		};
+		9AE22511860292C68C746E79 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB96F49A0912A8C4AB0D801B /* Pods-MovieWiki.debug.xcconfig */,
+				C130AB75EECAE20BF9261164 /* Pods-MovieWiki.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CAC914E56586EB22C88A3C04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4C3F75DD3B94BFE8EA9601F /* Pods_MovieWiki.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A9F057027116C53003E0BF9 /* Build configuration list for PBXNativeTarget "MovieWiki" */;
 			buildPhases = (
+				FDB84D9CA83124374C0B10BB /* [CP] Check Pods Manifest.lock */,
 				0A9F055827116C52003E0BF9 /* Sources */,
 				0A9F055927116C52003E0BF9 /* Frameworks */,
 				0A9F055A27116C52003E0BF9 /* Resources */,
+				70712B056DB646B9B4011402 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		70712B056DB646B9B4011402 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieWiki/Pods-MovieWiki-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieWiki/Pods-MovieWiki-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MovieWiki/Pods-MovieWiki-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDB84D9CA83124374C0B10BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MovieWiki-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0A9F055827116C52003E0BF9 /* Sources */ = {
@@ -284,6 +352,7 @@
 		};
 		0A9F057127116C53003E0BF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB96F49A0912A8C4AB0D801B /* Pods-MovieWiki.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +381,7 @@
 		};
 		0A9F057227116C53003E0BF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C130AB75EECAE20BF9261164 /* Pods-MovieWiki.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
