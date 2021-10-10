@@ -7,6 +7,8 @@
 
 import UIKit
 import MSPeekCollectionViewDelegateImplementation
+import SwiftyJSON
+import Alamofire
 
 protocol CollectionViewCellDelegate: AnyObject{
     func collectionView(collectionviewcell: MovieCell?, index: Int, didTappedInTableViewCell: TableViewTitleCell)
@@ -58,9 +60,9 @@ extension TableViewTitleCell: UICollectionViewDelegate, UICollectionViewDataSour
             
             if (titleLabel.text == "인기"){ // popular
                 
-            }else if (titleLabel.text == "현재 상영중"){ // nowPlaying
+            }else if (titleLabel.text == "현재 상영 중"){ // nowPlaying
                 
-            }else if (titleLabel.text == "최신 개봉"){ // latest
+            }else if (titleLabel.text == "최신 개봉작"){ // latest
                 
             }
             
