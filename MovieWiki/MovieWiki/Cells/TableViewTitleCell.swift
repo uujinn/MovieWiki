@@ -9,6 +9,7 @@ import UIKit
 import MSPeekCollectionViewDelegateImplementation
 import SwiftyJSON
 import Alamofire
+import SDWebImage
 
 protocol CollectionViewCellDelegate: AnyObject{
     func collectionView(collectionviewcell: MovieCell?, index: Int, didTappedInTableViewCell: TableViewTitleCell)
@@ -19,7 +20,7 @@ class TableViewTitleCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var behavior: MSCollectionViewPeekingBehavior!
+    let behavior = MSCollectionViewPeekingBehavior()
     let movieModel = MovieModel.shared
     
     weak var cellDelegate: CollectionViewCellDelegate?
@@ -32,15 +33,17 @@ class TableViewTitleCell: UITableViewCell {
         
         let cellNib = UINib(nibName: "MovieCell", bundle: nil)
         self.collectionView.register(cellNib, forCellWithReuseIdentifier: "MovieCell")
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
+        
         behavior.cellSpacing = 8
         behavior.cellPeekWidth = 17
         behavior.numberOfItemsToShow = 2
         collectionView.configureForPeekingBehavior(behavior: behavior)
+    }
+
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
     }
 
 }
@@ -59,11 +62,14 @@ extension TableViewTitleCell: UICollectionViewDelegate, UICollectionViewDataSour
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath) as? MovieCell{
             
             if (titleLabel.text == "인기"){ // popular
-                
+                cell.movieImage.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/original" + movieModel.popular[indexPath[1]]["poster_path"].stringValue), completed: nil)
+                cell.movieLabel.text = movieModel.popular[indexPath.row]["title"].stringValue
             }else if (titleLabel.text == "현재 상영 중"){ // nowPlaying
-                
+                cell.movieImage.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/original" + movieModel.nowPlaying[indexPath.row]["poster_path"].stringValue), completed: nil)
+                cell.movieLabel.text = movieModel.nowPlaying[indexPath[1]]["title"].stringValue
             }else if (titleLabel.text == "최신 개봉작"){ // latest
-                
+                cell.movieImage.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/original" + movieModel.latest[indexPath.row]["poster_path"].stringValue), completed: nil)
+                cell.movieLabel.text = movieModel.latest[indexPath.row]["title"].stringValue
             }
             
             cell.movieImage.layer.cornerRadius = 10

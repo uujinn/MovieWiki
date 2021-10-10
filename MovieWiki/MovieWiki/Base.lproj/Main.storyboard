@@ -89,14 +89,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIw-BC-8Ac">
-                                <rect key="frame" x="30" y="74" width="52" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OSl-8Y-84j">
-                                <rect key="frame" x="0.0" y="130" width="414" height="732"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OSl-8Y-84j">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="168" id="xau-eh-xxj">
@@ -113,12 +107,10 @@
                         <viewLayoutGuide key="safeArea" id="cDM-zV-9gn"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="OSl-8Y-84j" firstAttribute="top" secondItem="zIw-BC-8Ac" secondAttribute="bottom" constant="20" id="FwK-hh-uwe"/>
-                            <constraint firstItem="zIw-BC-8Ac" firstAttribute="top" secondItem="cDM-zV-9gn" secondAttribute="top" constant="30" id="IBe-0W-QTN"/>
                             <constraint firstItem="cDM-zV-9gn" firstAttribute="trailing" secondItem="OSl-8Y-84j" secondAttribute="trailing" id="LpV-ap-uOJ"/>
                             <constraint firstItem="OSl-8Y-84j" firstAttribute="leading" secondItem="cDM-zV-9gn" secondAttribute="leading" id="Oko-ge-RhK"/>
                             <constraint firstItem="cDM-zV-9gn" firstAttribute="bottom" secondItem="OSl-8Y-84j" secondAttribute="bottom" id="kSO-u8-VJm"/>
-                            <constraint firstItem="zIw-BC-8Ac" firstAttribute="leading" secondItem="cDM-zV-9gn" secondAttribute="leading" constant="30" id="vQo-hL-D6M"/>
+                            <constraint firstItem="OSl-8Y-84j" firstAttribute="top" secondItem="cDM-zV-9gn" secondAttribute="top" id="zTA-D3-w0A"/>
                         </constraints>
                     </view>
                     <connections>

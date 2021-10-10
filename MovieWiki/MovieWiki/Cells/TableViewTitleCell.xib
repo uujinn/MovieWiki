@@ -17,13 +17,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaS-3a-Pvl">
-                        <rect key="frame" x="8" y="8" width="52" height="36"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                        <rect key="frame" x="25" y="30" width="35" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="Cell" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="MWh-cU-g3M">
-                        <rect key="frame" x="0.0" y="52" width="399" height="152"/>
+                        <rect key="frame" x="0.0" y="74" width="399" height="130"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Eae-8M-Obj">
                             <size key="itemSize" width="128" height="128"/>
@@ -35,9 +35,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="MWh-cU-g3M" firstAttribute="leading" secondItem="4Ih-15-wVX" secondAttribute="leading" id="4Gb-ok-BtL"/>
-                    <constraint firstItem="JaS-3a-Pvl" firstAttribute="top" secondItem="4Ih-15-wVX" secondAttribute="top" constant="8" id="Ybe-60-Klv"/>
-                    <constraint firstItem="MWh-cU-g3M" firstAttribute="top" secondItem="JaS-3a-Pvl" secondAttribute="bottom" constant="8" symbolic="YES" id="bAk-iH-H4p"/>
-                    <constraint firstItem="JaS-3a-Pvl" firstAttribute="leading" secondItem="4Ih-15-wVX" secondAttribute="leading" constant="8" id="jOn-Qa-Kb9"/>
+                    <constraint firstItem="JaS-3a-Pvl" firstAttribute="top" secondItem="4Ih-15-wVX" secondAttribute="top" constant="30" id="Ybe-60-Klv"/>
+                    <constraint firstItem="MWh-cU-g3M" firstAttribute="top" secondItem="JaS-3a-Pvl" secondAttribute="bottom" constant="20" id="bAk-iH-H4p"/>
+                    <constraint firstItem="JaS-3a-Pvl" firstAttribute="leading" secondItem="4Ih-15-wVX" secondAttribute="leading" constant="25" id="jOn-Qa-Kb9"/>
                     <constraint firstAttribute="trailing" secondItem="MWh-cU-g3M" secondAttribute="trailing" id="olO-Rf-ki2"/>
                     <constraint firstAttribute="bottom" secondItem="MWh-cU-g3M" secondAttribute="bottom" id="sk8-M3-eSA"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JaS-3a-Pvl" secondAttribute="trailing" constant="8" id="vfL-Qi-9Dp"/>

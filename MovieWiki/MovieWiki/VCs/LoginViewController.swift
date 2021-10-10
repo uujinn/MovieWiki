@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        getMovieList()
     }
     
     let url : [String] = ["https://api.themoviedb.org/3/movie/popular?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR", "https://api.themoviedb.org/3/movie/now_playing?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR", "https://api.themoviedb.org/3/movie/upcoming?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR"]
@@ -120,27 +121,27 @@ class LoginViewController: UIViewController {
     
     func getMovieList(){
         AF.request(url[0]).responseJSON { [self] (response) in
-            if let value = response.value{ // value가 옵셔널이 아니라면(값이 있다면) 변수를 대입해줘!
+            if let value = response.value{
                 let json = JSON(value)
-                self.arr = json["results"].arrayValue //배열 값이다.
+                self.arr = json["results"].arrayValue
                 let movieModel = MovieModel.shared
                 movieModel.popular = arr
             }
         }
         
         AF.request(url[1]).responseJSON { [self] (response) in
-            if let value = response.value{ // value가 옵셔널이 아니라면(값이 있다면) 변수를 대입해줘!
+            if let value = response.value{
                 let json = JSON(value)
-                self.arr = json["results"].arrayValue //배열 값이다.
+                self.arr = json["results"].arrayValue
                 let movieModel = MovieModel.shared
                 movieModel.nowPlaying = arr
             }
         }
         
         AF.request(url[2]).responseJSON { [self] (response) in
-            if let value = response.value{ // value가 옵셔널이 아니라면(값이 있다면) 변수를 대입해줘!
+            if let value = response.value{
                 let json = JSON(value)
-                self.arr = json["results"].arrayValue //배열 값이다.
+                self.arr = json["results"].arrayValue
                 let movieModel = MovieModel.shared
                 movieModel.latest = arr
                 

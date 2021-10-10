@@ -65,7 +65,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
         print("선택된 행은 \(indexPath.row) 입니다.")
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 282
+        return 310
     }
     
     private func setupTableView(){
