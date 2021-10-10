@@ -12,5 +12,6 @@ class MovieModel: NSObject{
     static let shared = MovieModel()
     var popular: [JSON] = [] // 인기
     var nowPlaying: [JSON] = [] // 현재 상영 중
+    var latest: [JSON] = []
     var index: Int = 0
 }
