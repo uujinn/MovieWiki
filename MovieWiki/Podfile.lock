@@ -18,6 +18,7 @@ PODS:
     - KakaoSDKAuth (= 2.8.1)
   - naveridlogin-sdk-ios (4.1.3)
   - Pageboy (3.6.2)
+  - SwiftyJSON (5.0.1)
   - Tabman (2.11.1):
     - Pageboy (~> 3.6.0)
 
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - KakaoSDKTalk
   - KakaoSDKUser
   - naveridlogin-sdk-ios
+  - SwiftyJSON
   - Tabman (~> 2.11)
 
 SPEC REPOS:
@@ -39,6 +41,7 @@ SPEC REPOS:
     - KakaoSDKUser
     - naveridlogin-sdk-ios
     - Pageboy
+    - SwiftyJSON
     - Tabman
 
 SPEC CHECKSUMS:
@@ -50,8 +53,9 @@ SPEC CHECKSUMS:
   KakaoSDKUser: c4bdbca17b05ce7a25c67176ac68b6b0c8b1db56
   naveridlogin-sdk-ios: b9d7c20677981177ed994ecb1c8c2b49f223277d
   Pageboy: cf121b9dd48c63f3f281b2a9ec93d02e0f23879b
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Tabman: 792ac76fd1ec95af175c93db880a3c47cabedc91
 
-PODFILE CHECKSUM: 5d6f976e5f2ba825441d35cb2bba39c0bd29d888
+PODFILE CHECKSUM: 9134f92bc4a9cfc0ff5a055b564e5f417969d6a4
 
 COCOAPODS: 1.11.2

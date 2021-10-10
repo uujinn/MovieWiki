@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewTitleCell" rowHeight="204" id="HTq-hw-Yzt" customClass="TableViewTitleCell" customModule="MovieWiki" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="399" height="204"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HTq-hw-Yzt" id="4Ih-15-wVX">
+                <rect key="frame" x="0.0" y="0.0" width="399" height="204"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaS-3a-Pvl">
+                        <rect key="frame" x="8" y="8" width="52" height="36"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="MWh-cU-g3M">
+                        <rect key="frame" x="0.0" y="52" width="399" height="152"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Eae-8M-Obj">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MWh-cU-g3M" firstAttribute="leading" secondItem="4Ih-15-wVX" secondAttribute="leading" id="4Gb-ok-BtL"/>
+                    <constraint firstItem="JaS-3a-Pvl" firstAttribute="top" secondItem="4Ih-15-wVX" secondAttribute="top" constant="8" id="Ybe-60-Klv"/>
+                    <constraint firstItem="MWh-cU-g3M" firstAttribute="top" secondItem="JaS-3a-Pvl" secondAttribute="bottom" constant="8" symbolic="YES" id="bAk-iH-H4p"/>
+                    <constraint firstItem="JaS-3a-Pvl" firstAttribute="leading" secondItem="4Ih-15-wVX" secondAttribute="leading" constant="8" id="jOn-Qa-Kb9"/>
+                    <constraint firstAttribute="trailing" secondItem="MWh-cU-g3M" secondAttribute="trailing" id="olO-Rf-ki2"/>
+                    <constraint firstAttribute="bottom" secondItem="MWh-cU-g3M" secondAttribute="bottom" id="sk8-M3-eSA"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JaS-3a-Pvl" secondAttribute="trailing" constant="8" id="vfL-Qi-9Dp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="74.637681159420296" y="158.03571428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

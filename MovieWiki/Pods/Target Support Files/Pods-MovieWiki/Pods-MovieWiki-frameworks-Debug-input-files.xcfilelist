@@ -6,5 +6,6 @@ ${BUILT_PRODUCTS_DIR}/KakaoSDKTalk/KakaoSDKTalk.framework
 ${BUILT_PRODUCTS_DIR}/KakaoSDKTemplate/KakaoSDKTemplate.framework
 ${BUILT_PRODUCTS_DIR}/KakaoSDKUser/KakaoSDKUser.framework
 ${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
 ${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework
 ${PODS_ROOT}/naveridlogin-sdk-ios/NaverThirdPartyLogin.framework
