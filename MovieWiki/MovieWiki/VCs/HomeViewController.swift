@@ -24,11 +24,28 @@ class HomeViewController: UIViewController, CollectionViewCellDelegate{
         
         let movieModel = MovieModel.shared
         movieModel.index = index
-//        print(index)
-//        guard let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
-//
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc, animated: false)
+        print("index: \(index)")
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailVC") as? DetailViewController else { return }
+        
+        switch didTappedInTableViewCell.titleLabel.text{
+        case "인기":
+            movieModel.id = movieModel.popular[index]["id"].intValue
+            break
+        case "현재 상영 중":
+            movieModel.id = movieModel.nowPlaying[index]["id"].intValue
+            break
+        case "최신 개봉작":
+            movieModel.id = movieModel.latest[index]["id"].intValue
+            break
+        default:
+            break
+        }
+
+        vc.movieId = movieModel.id
+//        self.navigationController?.pushViewController(vc, animated: true)
+
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: false)
     }
 
 }

@@ -65,7 +65,7 @@ extension TableViewTitleCell: UICollectionViewDelegate, UICollectionViewDataSour
             if (titleLabel.text == "인기"){ // popular
                 cell.movieImage.kf.setImage(with: URL(string: url + movieModel.popular[indexPath[1]]["poster_path"].stringValue))
                 cell.movieLabel.text = movieModel.popular[indexPath.row]["title"].stringValue
-//                print(movieModel.popular[indexPath.row])
+                print(movieModel.popular[indexPath.row]["id"])
             }else if (titleLabel.text == "현재 상영 중"){ // nowPlaying
                 cell.movieImage.kf.setImage(with: URL(string: url + movieModel.nowPlaying[indexPath[1]]["poster_path"].stringValue))
                 cell.movieLabel.text = movieModel.nowPlaying[indexPath.row]["title"].stringValue
@@ -91,8 +91,9 @@ extension TableViewTitleCell: UICollectionViewDelegate, UICollectionViewDataSour
         print("콜렉션 뷰: " + String(indexPath.row))
         
         let cell = collectionView.cellForItem(at: indexPath) as? MovieCell
-        
         self.cellDelegate?.collectionView(collectionviewcell: cell, index: indexPath.item, didTappedInTableViewCell: self)
+        
+        
     }
     
     // 사용자가 스크롤을 하고 스크린과 손이 떨어졌을 때 호출

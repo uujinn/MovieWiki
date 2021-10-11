@@ -14,4 +14,5 @@ class MovieModel: NSObject{
     var nowPlaying: [JSON] = [] // 현재 상영 중
     var latest: [JSON] = []
     var index: Int = 0
+    var id: Int = 0
 }
