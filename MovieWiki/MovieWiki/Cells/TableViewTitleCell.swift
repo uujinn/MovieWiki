@@ -35,7 +35,7 @@ class TableViewTitleCell: UITableViewCell {
         self.collectionView.register(cellNib, forCellWithReuseIdentifier: "MovieCell")
         
         behavior.cellSpacing = 8
-        behavior.cellPeekWidth = 17
+        behavior.cellPeekWidth = 18
         behavior.numberOfItemsToShow = 2
         collectionView.configureForPeekingBehavior(behavior: behavior)
     }
@@ -64,9 +64,10 @@ extension TableViewTitleCell: UICollectionViewDelegate, UICollectionViewDataSour
             if (titleLabel.text == "인기"){ // popular
                 cell.movieImage.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/original" + movieModel.popular[indexPath[1]]["poster_path"].stringValue), completed: nil)
                 cell.movieLabel.text = movieModel.popular[indexPath.row]["title"].stringValue
+            
             }else if (titleLabel.text == "현재 상영 중"){ // nowPlaying
                 cell.movieImage.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/original" + movieModel.nowPlaying[indexPath.row]["poster_path"].stringValue), completed: nil)
-                cell.movieLabel.text = movieModel.nowPlaying[indexPath[1]]["title"].stringValue
+                cell.movieLabel.text = movieModel.nowPlaying[indexPath.row]["title"].stringValue
             }else if (titleLabel.text == "최신 개봉작"){ // latest
                 cell.movieImage.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/original" + movieModel.latest[indexPath.row]["poster_path"].stringValue), completed: nil)
                 cell.movieLabel.text = movieModel.latest[indexPath.row]["title"].stringValue

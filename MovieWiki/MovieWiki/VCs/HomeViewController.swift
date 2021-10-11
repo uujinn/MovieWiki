@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, CollectionViewCellDelegate{
+class HomeViewController: UIViewController, CollectionViewCellDelegate{
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -15,6 +15,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, Collection
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         setupTableView()
     }
     
@@ -22,7 +24,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, Collection
         
         let movieModel = MovieModel.shared
         movieModel.index = index
-        
+//        print(index)
 //        guard let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
 //
 //        vc.modalPresentationStyle = .fullScreen
@@ -33,7 +35,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, Collection
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //print(String(lists.count) + " 줄")
         return 3
     }
     
@@ -72,16 +73,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
             // Register the xib for tableview cell
             tableView.delegate = self
             tableView.dataSource = self
-            // #1
+
             let cell = UINib(nibName: "TableViewTitleCell", bundle: nil)
             self.tableView.register(cell, forCellReuseIdentifier: "TableViewTitleCell")
-            // #2 #3
-        /*
-            let newsLetterCellNib = UINib(nibName: "NewsLetterCell", bundle: nil)
-            self.tableView.register(newsLetterCellNib, forCellReuseIdentifier: "NewsLetterCell")
-            // #4
-            let categoryCellNib = UINib(nibName: "CategoryCell", bundle: nil)
-            self.tableView.register(categoryCellNib, forCellReuseIdentifier: "CategoryCell")*/
     }
     
 }
