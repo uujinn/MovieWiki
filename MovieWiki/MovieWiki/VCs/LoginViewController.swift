@@ -18,17 +18,25 @@ class LoginViewController: UIViewController {
     // 네이버 로그인
     let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
     
+    
+    let url : [String] = ["https://api.themoviedb.org/3/movie/popular?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR", "https://api.themoviedb.org/3/movie/now_playing?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR", "https://api.themoviedb.org/3/movie/upcoming?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR"]
+    
+    let params: Parameters = [
+        "api_key": "c54f2606f5cf4a0e9fd4dd02d158bf13",
+        "language": "ko-KR",
+        "page": "1"
+    ]
+    
+    private var arr : [JSON] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         getMovieList()
     }
     
-    let url : [String] = ["https://api.themoviedb.org/3/movie/popular?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR", "https://api.themoviedb.org/3/movie/now_playing?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR", "https://api.themoviedb.org/3/movie/upcoming?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR"]
-    
-    private var arr : [JSON] = []
-    
     @IBAction func kakaoLogin(_ sender: Any) {
+
         // 카카오톡 설치 여부 확인
         if (UserApi.isKakaoTalkLoginAvailable()) {
             UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
@@ -86,14 +94,18 @@ class LoginViewController: UIViewController {
     
     @IBAction func naverLogin(_ sender: Any) {
         loginInstance?.requestThirdPartyLogin()
-        print("try login")
+        print(loginInstance?.accessToken)
     }
     
+    @IBAction func logout(_ sender: Any) {
+        loginInstance?.requestDeleteToken()
+    }
     
     private func getNaverInfo() {
         guard let isValidAccessToken = loginInstance?.isValidAccessTokenExpireTimeNow() else { return }
         
         if !isValidAccessToken {
+            print("sldkjfls")
             return
         }
         
@@ -104,16 +116,18 @@ class LoginViewController: UIViewController {
         
         let authorization = "\(tokenType) \(accessToken)"
         
-        let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": authorization])
-        
+        let req = AF.request(url,
+                             method: .get,
+                             parameters: nil,
+                             encoding: JSONEncoding.default,
+                             headers: ["Authorization": authorization])
         req.responseJSON { response in
             guard let result = response.value as? [String: Any] else { return }
             guard let object = result["response"] as? [String: Any] else { return }
             guard let name = object["name"] as? String else { return }
-            guard let email = object["email"] as? String else { return }
+//            guard let email = object["email"] as? String else { return }
             
-            print(name)
-            print(email)
+            print("name: \(name)")
         }
         
         
@@ -123,16 +137,17 @@ class LoginViewController: UIViewController {
         AF.request(url[0]).responseJSON { [self] (response) in
             if let value = response.value{
                 let json = JSON(value)
-                self.arr = json["results"].arrayValue
+                arr = json["results"].arrayValue
                 let movieModel = MovieModel.shared
                 movieModel.popular = arr
+//                print(json)
             }
         }
         
         AF.request(url[1]).responseJSON { [self] (response) in
             if let value = response.value{
                 let json = JSON(value)
-                self.arr = json["results"].arrayValue
+                arr = json["results"].arrayValue
                 let movieModel = MovieModel.shared
                 movieModel.nowPlaying = arr
             }
@@ -141,7 +156,7 @@ class LoginViewController: UIViewController {
         AF.request(url[2]).responseJSON { [self] (response) in
             if let value = response.value{
                 let json = JSON(value)
-                self.arr = json["results"].arrayValue
+                arr = json["results"].arrayValue
                 let movieModel = MovieModel.shared
                 movieModel.latest = arr
                 
@@ -159,8 +174,13 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
         
         // 로그인에 성공했을 경우 호출
         func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
-            print("[Success] : Success Naver Login")
             getNaverInfo()
+            print("[Success] : Success Naver Login")
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabVC") as! TabViewController
+
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+            
         }
         
         // 접근 토큰 갱신

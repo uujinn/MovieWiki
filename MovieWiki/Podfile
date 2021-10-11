@@ -14,7 +14,7 @@ target 'MovieWiki' do
 
   pod 'SwiftyJSON'
   pod 'MSPeekCollectionViewDelegateImplementation'
-  pod 'SDWebImage', '~> 5.0'
+  pod 'Kingfisher', '~> 7.0'
 
   pod 'Tabman', '~> 2.11'
 end

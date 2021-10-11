@@ -48,6 +48,14 @@
                                     <constraint firstAttribute="width" secondItem="rJi-yr-hbj" secondAttribute="height" multiplier="1:1" id="kLj-NO-lcu"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsl-w6-xnf">
+                                <rect key="frame" x="171" y="790" width="73" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
+                                <connections>
+                                    <action selector="logout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ut-j0-k8Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -55,9 +63,13 @@
                             <constraint firstItem="rJi-yr-hbj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="7G5-5T-FZV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Dtn-2A-huq" secondAttribute="bottom" constant="80" id="7Vc-p0-NKf"/>
                             <constraint firstItem="ncz-2v-MOz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HvE-zx-BFp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hsl-w6-xnf" secondAttribute="trailing" constant="170" id="Qnr-AS-l54"/>
                             <constraint firstItem="rJi-yr-hbj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RfO-l8-56n"/>
                             <constraint firstItem="Dtn-2A-huq" firstAttribute="top" secondItem="ncz-2v-MOz" secondAttribute="bottom" constant="5" id="XIw-Zo-YBU"/>
+                            <constraint firstItem="hsl-w6-xnf" firstAttribute="top" secondItem="Dtn-2A-huq" secondAttribute="bottom" constant="8" symbolic="YES" id="bmX-SM-34F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hsl-w6-xnf" secondAttribute="bottom" constant="41" id="dxl-z3-2DI"/>
                             <constraint firstItem="Dtn-2A-huq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eyn-rD-3hf"/>
+                            <constraint firstItem="hsl-w6-xnf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="171" id="hma-TL-nW0"/>
                             <constraint firstItem="ncz-2v-MOz" firstAttribute="top" secondItem="rJi-yr-hbj" secondAttribute="bottom" constant="108" id="upa-0Q-lJD"/>
                         </constraints>
                     </view>

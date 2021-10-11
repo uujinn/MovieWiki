@@ -9,7 +9,7 @@ import UIKit
 import MSPeekCollectionViewDelegateImplementation
 import SwiftyJSON
 import Alamofire
-import SDWebImage
+import Kingfisher
 
 protocol CollectionViewCellDelegate: AnyObject{
     func collectionView(collectionviewcell: MovieCell?, index: Int, didTappedInTableViewCell: TableViewTitleCell)
@@ -61,15 +61,16 @@ extension TableViewTitleCell: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath) as? MovieCell{
             
+            let url = "https://image.tmdb.org/t/p/original"
             if (titleLabel.text == "인기"){ // popular
-                cell.movieImage.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/original" + movieModel.popular[indexPath[1]]["poster_path"].stringValue), completed: nil)
+                cell.movieImage.kf.setImage(with: URL(string: url + movieModel.popular[indexPath[1]]["poster_path"].stringValue))
                 cell.movieLabel.text = movieModel.popular[indexPath.row]["title"].stringValue
-            
+//                print(movieModel.popular[indexPath.row])
             }else if (titleLabel.text == "현재 상영 중"){ // nowPlaying
-                cell.movieImage.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/original" + movieModel.nowPlaying[indexPath.row]["poster_path"].stringValue), completed: nil)
+                cell.movieImage.kf.setImage(with: URL(string: url + movieModel.nowPlaying[indexPath[1]]["poster_path"].stringValue))
                 cell.movieLabel.text = movieModel.nowPlaying[indexPath.row]["title"].stringValue
             }else if (titleLabel.text == "최신 개봉작"){ // latest
-                cell.movieImage.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/original" + movieModel.latest[indexPath.row]["poster_path"].stringValue), completed: nil)
+                cell.movieImage.kf.setImage(with: URL(string: url + movieModel.latest[indexPath[1]]["poster_path"].stringValue))
                 cell.movieLabel.text = movieModel.latest[indexPath.row]["title"].stringValue
             }
             
