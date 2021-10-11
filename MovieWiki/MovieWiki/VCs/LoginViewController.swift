@@ -93,8 +93,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func naverLogin(_ sender: Any) {
+        loginInstance?.delegate = self
         loginInstance?.requestThirdPartyLogin()
-        print(loginInstance?.accessToken)
     }
     
     @IBAction func logout(_ sender: Any) {
@@ -105,7 +105,6 @@ class LoginViewController: UIViewController {
         guard let isValidAccessToken = loginInstance?.isValidAccessTokenExpireTimeNow() else { return }
         
         if !isValidAccessToken {
-            print("sldkjfls")
             return
         }
         
@@ -121,10 +120,12 @@ class LoginViewController: UIViewController {
                              parameters: nil,
                              encoding: JSONEncoding.default,
                              headers: ["Authorization": authorization])
+        
         req.responseJSON { response in
             guard let result = response.value as? [String: Any] else { return }
             guard let object = result["response"] as? [String: Any] else { return }
             guard let name = object["name"] as? String else { return }
+//            guard let profileImg = object["profi"]
 //            guard let email = object["email"] as? String else { return }
             
             print("name: \(name)")
@@ -167,15 +168,12 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
-        // 로그인 버튼을 눌렀을 경우 열게 될 브라우저
-        func oauth20ConnectionDidOpenInAppBrowser(forOAuth request: URLRequest!) {
 
-        }
-        
         // 로그인에 성공했을 경우 호출
         func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
-            getNaverInfo()
             print("[Success] : Success Naver Login")
+            getNaverInfo()
+            
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabVC") as! TabViewController
 
             vc.modalPresentationStyle = .fullScreen
