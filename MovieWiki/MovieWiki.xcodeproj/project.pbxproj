@@ -23,7 +23,8 @@
 		0A9F0586271291DC003E0BF9 /* TableViewTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9F0585271291DC003E0BF9 /* TableViewTitleCell.xib */; };
 		0A9F05882712920E003E0BF9 /* TableViewTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F05872712920E003E0BF9 /* TableViewTitleCell.swift */; };
 		0A9F058A2714969F003E0BF9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F05892714969F003E0BF9 /* DetailViewController.swift */; };
-		0A9F058F27149FB5003E0BF9 /* MovieRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F058E27149FB5003E0BF9 /* MovieRequest.swift */; };
+		0A9F058F27149FB5003E0BF9 /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F058E27149FB5003E0BF9 /* MovieResponse.swift */; };
+		0A9F059127152A12003E0BF9 /* MovieRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F059027152A12003E0BF9 /* MovieRequest.swift */; };
 		8ABB6D5F89102C4CC100C4E2 /* Pods_MovieWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C3F75DD3B94BFE8EA9601F /* Pods_MovieWiki.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +47,8 @@
 		0A9F0585271291DC003E0BF9 /* TableViewTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewTitleCell.xib; sourceTree = "<group>"; };
 		0A9F05872712920E003E0BF9 /* TableViewTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewTitleCell.swift; sourceTree = "<group>"; };
 		0A9F05892714969F003E0BF9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		0A9F058E27149FB5003E0BF9 /* MovieRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRequest.swift; sourceTree = "<group>"; };
+		0A9F058E27149FB5003E0BF9 /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
+		0A9F059027152A12003E0BF9 /* MovieRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRequest.swift; sourceTree = "<group>"; };
 		C130AB75EECAE20BF9261164 /* Pods-MovieWiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieWiki.release.xcconfig"; path = "Target Support Files/Pods-MovieWiki/Pods-MovieWiki.release.xcconfig"; sourceTree = "<group>"; };
 		CB96F49A0912A8C4AB0D801B /* Pods-MovieWiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieWiki.debug.xcconfig"; path = "Target Support Files/Pods-MovieWiki/Pods-MovieWiki.debug.xcconfig"; sourceTree = "<group>"; };
 		D4C3F75DD3B94BFE8EA9601F /* Pods_MovieWiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieWiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,12 +98,12 @@
 			path = MovieWiki;
 			sourceTree = "<group>";
 		};
-		0A9F058127128FAA003E0BF9 /* Model */ = {
+		0A9F058127128FAA003E0BF9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				0A9F057F27128EF6003E0BF9 /* MovieModel.swift */,
 			);
-			path = Model;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		0A9F058227128FB9003E0BF9 /* Resources */ = {
@@ -143,7 +145,7 @@
 			children = (
 				0A9F058C27149F88003E0BF9 /* Request */,
 				0A9F058D27149F9A003E0BF9 /* Response */,
-				0A9F058127128FAA003E0BF9 /* Model */,
+				0A9F058127128FAA003E0BF9 /* Data */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -151,7 +153,7 @@
 		0A9F058C27149F88003E0BF9 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				0A9F058E27149FB5003E0BF9 /* MovieRequest.swift */,
+				0A9F059027152A12003E0BF9 /* MovieRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -159,6 +161,7 @@
 		0A9F058D27149F9A003E0BF9 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				0A9F058E27149FB5003E0BF9 /* MovieResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -299,8 +302,9 @@
 			files = (
 				0A9F058A2714969F003E0BF9 /* DetailViewController.swift in Sources */,
 				0A9F058027128EF6003E0BF9 /* MovieModel.swift in Sources */,
-				0A9F058F27149FB5003E0BF9 /* MovieRequest.swift in Sources */,
+				0A9F058F27149FB5003E0BF9 /* MovieResponse.swift in Sources */,
 				0A9F05762711F90A003E0BF9 /* SearchViewController.swift in Sources */,
+				0A9F059127152A12003E0BF9 /* MovieRequest.swift in Sources */,
 				0A9F05882712920E003E0BF9 /* TableViewTitleCell.swift in Sources */,
 				0A9F056427116C52003E0BF9 /* LoginViewController.swift in Sources */,
 				0A9F057E27128C75003E0BF9 /* MovieCell.swift in Sources */,

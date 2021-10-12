@@ -17,12 +17,22 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-
+        print(movieId)
+        MovieRequest().getMovieData(self)
     }
     
     @IBAction func goBackToHome(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+}
+
+//MARK:- API
+extension DetailViewController{
+    func didSuccess(_ response: MovieResponse) {
+        
+        let movieMain = response.originalTitle
+        
+        print(movieMain)
+    }
 }
