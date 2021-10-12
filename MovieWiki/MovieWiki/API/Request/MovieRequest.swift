@@ -10,8 +10,9 @@ import Alamofire
 
 class MovieRequest{
     
-    func getMovieData(_ viewController: DetailViewController){
-        let url = "https://api.themoviedb.org/3/movie/580489?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR"
+    func getMovieData(_ viewController: DetailViewController, id: Int){
+        print("getMovieData - id: \(id)") //580489
+        let url = "https://api.themoviedb.org/3/movie/\(id)?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR"
         
         let params: Parameters = [
             "api_key": "c54f2606f5cf4a0e9fd4dd02d158bf13",

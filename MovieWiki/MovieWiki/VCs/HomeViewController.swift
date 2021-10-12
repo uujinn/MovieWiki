@@ -42,6 +42,7 @@ class HomeViewController: UIViewController, CollectionViewCellDelegate{
         }
 
         vc.movieId = movieModel.id
+        print("HomeVC movieModel.id : \(movieModel.id)")
 //        self.navigationController?.pushViewController(vc, animated: true)
 
         vc.modalPresentationStyle = .fullScreen
