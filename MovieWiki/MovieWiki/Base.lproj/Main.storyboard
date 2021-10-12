@@ -221,10 +221,25 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3n-Pr-YBA">
+                                                <rect key="frame" x="157" y="905" width="100" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="AdU-82-0vf"/>
+                                                    <constraint firstAttribute="height" constant="40" id="P9j-u3-A72"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="리뷰 작성"/>
+                                                <connections>
+                                                    <action selector="createReview:" destination="gGN-bB-KqL" eventType="touchUpInside" id="FZX-wx-H2S"/>
+                                                    <segue destination="RQv-a6-IwN" kind="show" id="LQR-Nx-BcD"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="qOR-Bg-l63" firstAttribute="top" secondItem="7gw-b2-xie" secondAttribute="bottom" constant="25" id="0oz-iR-q6t"/>
+                                            <constraint firstItem="Z3n-Pr-YBA" firstAttribute="centerX" secondItem="fTu-sl-dDr" secondAttribute="centerX" id="3jZ-W3-mme"/>
                                             <constraint firstAttribute="trailing" secondItem="7gw-b2-xie" secondAttribute="trailing" id="ALB-5g-Lcb"/>
                                             <constraint firstItem="xSm-MI-GGL" firstAttribute="leading" secondItem="fTu-sl-dDr" secondAttribute="leading" constant="20" id="B9R-7u-sqf"/>
                                             <constraint firstItem="rh8-cZ-dUH" firstAttribute="leading" secondItem="fTu-sl-dDr" secondAttribute="leading" constant="10" id="Bie-bm-52F"/>
@@ -249,6 +264,7 @@
                                             <constraint firstItem="g4U-C4-23Q" firstAttribute="leading" secondItem="fTu-sl-dDr" secondAttribute="leading" constant="20" id="tFm-kT-ic9"/>
                                             <constraint firstItem="mJD-FX-cap" firstAttribute="leading" secondItem="yx3-gr-6jr" secondAttribute="trailing" constant="16" id="w7G-0T-knZ"/>
                                             <constraint firstAttribute="trailing" secondItem="xSm-MI-GGL" secondAttribute="trailing" constant="20" id="wsq-dj-WJJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="Z3n-Pr-YBA" secondAttribute="bottom" constant="55" id="yOf-a8-Wsv"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -272,6 +288,7 @@
                             <constraint firstItem="XUn-qn-lG5" firstAttribute="trailing" secondItem="8NW-CR-9ph" secondAttribute="trailing" id="uWR-Cc-RG6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="I99-iU-lGa"/>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="backImg" destination="7gw-b2-xie" id="rDU-rA-g6E"/>
@@ -285,7 +302,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dX9-Qu-RIB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3167" y="-304"/>
+            <point key="canvasLocation" x="3129" y="-405"/>
+        </scene>
+        <!--Review View Controller-->
+        <scene sceneID="H4H-n2-olf">
+            <objects>
+                <viewController storyboardIdentifier="ReviewVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RQv-a6-IwN" customClass="ReviewViewController" customModule="MovieWiki" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zDg-2q-iZm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="NQf-kB-bPn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6ux-1z-A35"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XCW-75-xqG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4219" y="-405"/>
         </scene>
         <!--My Page View Controller-->
         <scene sceneID="NaA-iM-xDv">

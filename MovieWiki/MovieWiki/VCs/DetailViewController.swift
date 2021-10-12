@@ -33,6 +33,12 @@ class DetailViewController: UIViewController {
 
     }
     
+    @IBAction func createReview(_ sender: Any) {
+//        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReviewVC") as? ReviewViewController else { return }
+//        
+//        self.navigationController?.pushViewController(vc, animated: true)
+
+    }
     @IBAction func goBackToHome(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
