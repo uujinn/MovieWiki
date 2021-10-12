@@ -27,6 +27,7 @@
 		0A9F059127152A12003E0BF9 /* MovieRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F059027152A12003E0BF9 /* MovieRequest.swift */; };
 		0A9F05932715727A003E0BF9 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F05922715727A003E0BF9 /* ReviewViewController.swift */; };
 		0A9F05952715DECC003E0BF9 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F05942715DECC003E0BF9 /* ReviewModel.swift */; };
+		0A9F05972715E532003E0BF9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F05962715E532003E0BF9 /* UserModel.swift */; };
 		8ABB6D5F89102C4CC100C4E2 /* Pods_MovieWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C3F75DD3B94BFE8EA9601F /* Pods_MovieWiki.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		0A9F059027152A12003E0BF9 /* MovieRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRequest.swift; sourceTree = "<group>"; };
 		0A9F05922715727A003E0BF9 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		0A9F05942715DECC003E0BF9 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
+		0A9F05962715E532003E0BF9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		C130AB75EECAE20BF9261164 /* Pods-MovieWiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieWiki.release.xcconfig"; path = "Target Support Files/Pods-MovieWiki/Pods-MovieWiki.release.xcconfig"; sourceTree = "<group>"; };
 		CB96F49A0912A8C4AB0D801B /* Pods-MovieWiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieWiki.debug.xcconfig"; path = "Target Support Files/Pods-MovieWiki/Pods-MovieWiki.debug.xcconfig"; sourceTree = "<group>"; };
 		D4C3F75DD3B94BFE8EA9601F /* Pods_MovieWiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieWiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 			children = (
 				0A9F057F27128EF6003E0BF9 /* MovieModel.swift */,
 				0A9F05942715DECC003E0BF9 /* ReviewModel.swift */,
+				0A9F05962715E532003E0BF9 /* UserModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				0A9F056427116C52003E0BF9 /* LoginViewController.swift in Sources */,
 				0A9F057E27128C75003E0BF9 /* MovieCell.swift in Sources */,
 				0A9F057A2711FB03003E0BF9 /* MyPageViewController.swift in Sources */,
+				0A9F05972715E532003E0BF9 /* UserModel.swift in Sources */,
 				0A9F056027116C52003E0BF9 /* AppDelegate.swift in Sources */,
 				0A9F056227116C52003E0BF9 /* SceneDelegate.swift in Sources */,
 				0A9F05952715DECC003E0BF9 /* ReviewModel.swift in Sources */,

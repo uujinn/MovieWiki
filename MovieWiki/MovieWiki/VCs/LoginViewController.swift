@@ -59,6 +59,22 @@ class LoginViewController: UIViewController {
             else {
                 print("loginWithKakaoAccount() success.")
                 
+                // 사용자 정보 가져오기
+                UserApi.shared.me() {(user, error) in
+                    if let error = error {
+                        print(error)
+                    }
+                    else {
+                        print("me() success.")
+                        print("user: \(user?.kakaoAccount?.profile?.nickname ?? "user")")
+                        print("userImg: \(user?.kakaoAccount?.profile?.profileImageUrl)")
+                        UserDefaults.standard.set(user?.kakaoAccount?.profile?.nickname, forKey: "name")
+                        UserDefaults.standard.set(user?.kakaoAccount?.profile?.profileImageUrl, forKey: "img")
+                    }
+                }
+                
+                UserDefaultsKey.isLoggedIn = true
+                
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabVC") as! TabViewController
 
                 vc.modalPresentationStyle = .fullScreen
@@ -69,27 +85,7 @@ class LoginViewController: UIViewController {
         }
         
         
-        //        // 사용자 정보 가져오기
-        //        UserApi.shared.me() {(user, error) in
-        //            if let error = error {
-        //                print(error)
-        //            }
-        //            else {
-        //                print("me() success.")
-        //                print("user: \(user?.kakaoAccount?.profile?.nickname ?? "user")")
-        //                //do something
-        //                _ = user
-        //            }
-        //        }
-        
-        //        UserApi.shared.logout {(error) in
-        //            if let error = error {
-        //                print(error)
-        //            }
-        //            else {
-        //                print("unlink() success.")
-        //            }
-        //        }
+
     }
     
     @IBAction func naverLogin(_ sender: Any) {
@@ -125,10 +121,15 @@ class LoginViewController: UIViewController {
             guard let result = response.value as? [String: Any] else { return }
             guard let object = result["response"] as? [String: Any] else { return }
             guard let name = object["name"] as? String else { return }
-//            guard let profileImg = object["profi"]
-//            guard let email = object["email"] as? String else { return }
+            guard let profileImg = object["profile_image"] as? String else {return}
             
             print("name: \(name)")
+            print("profileImg: \(profileImg)")
+            
+            UserDefaults.standard.set(name, forKey: "name")
+            UserDefaults.standard.set(profileImg, forKey: "img")
+
+        
         }
         
         
@@ -172,6 +173,7 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
         // 로그인에 성공했을 경우 호출
         func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
             print("[Success] : Success Naver Login")
+            UserDefaultsKey.isLoggedIn = true
             getNaverInfo()
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabVC") as! TabViewController
