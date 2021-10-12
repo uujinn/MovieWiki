@@ -6,24 +6,53 @@
 //
 
 import UIKit
+import Cosmos
+import Kingfisher
 
 class ReviewViewController: UIViewController {
 
+    @IBOutlet weak var cosmosView: CosmosView!
+    
+    @IBOutlet weak var posterImg: UIImageView!
+    @IBOutlet weak var movieTitleLabel: UILabel!
+    @IBOutlet weak var reviewMsg: UITextView!
+    
+    var movieTitle = ""
+    var movieImgPath = ""
+    
+    let r = Review.shared
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.movieTitleLabel.text = movieTitle
+        self.posterImg.kf.setImage(with: URL(string: movieImgPath))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // 별점
+        cosmos()
+
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+//        print(r.reviewArray)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func uploadReview(_ sender: Any) {
+        r.reviewArray.append(reviewModel(movieTitle: movieTitle, movieImgPath: movieImgPath, rating: cosmosView.rating, reviewMsg: reviewMsg.text))
+        self.dismiss(animated: true, completion: nil)
     }
-    */
 
+    @IBAction func backBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+   
+
+    func cosmos(){
+        self.cosmosView.settings.updateOnTouch = true
+        self.cosmosView.settings.fillMode = .half
+        self.cosmosView.settings.starSize = 40
+        self.cosmosView.settings.starMargin = 5
+    }
 }

@@ -17,4 +17,5 @@ target 'MovieWiki' do
   pod 'Kingfisher', '~> 7.0'
 
   pod 'Tabman', '~> 2.11'
+  pod 'Cosmos', '~> 23.0'
 end

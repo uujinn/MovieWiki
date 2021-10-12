@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.4)
+  - Cosmos (23.0.0)
   - KakaoSDKAuth (2.8.1):
     - KakaoSDKCommon (= 2.8.1)
   - KakaoSDKCommon (2.8.1):
@@ -25,6 +26,7 @@ PODS:
     - Pageboy (~> 3.6.0)
 
 DEPENDENCIES:
+  - Cosmos (~> 23.0)
   - KakaoSDKAuth
   - KakaoSDKCommon
   - KakaoSDKTalk
@@ -38,6 +40,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Cosmos
     - KakaoSDKAuth
     - KakaoSDKCommon
     - KakaoSDKTalk
@@ -52,6 +55,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   KakaoSDKAuth: 3cf74660531ac85cd2c7931df8d90d562b0a8fe2
   KakaoSDKCommon: 701ef2a9b92215a4bf131b2a6139c3586b5e8d99
   KakaoSDKTalk: 14a62541fbe93bfeafae8751e58d7212d3642431
@@ -64,6 +68,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Tabman: 792ac76fd1ec95af175c93db880a3c47cabedc91
 
-PODFILE CHECKSUM: 9fa30e9abcf8358cb1860b06d71d219baa3e220a
+PODFILE CHECKSUM: 1f6f96fbaacce9bd137afd1df691dfafddba1764
 
 COCOAPODS: 1.11.2

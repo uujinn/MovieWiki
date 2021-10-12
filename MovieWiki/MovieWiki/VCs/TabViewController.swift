@@ -29,19 +29,19 @@ class TabViewController: TabmanViewController {
         self.dataSource = self
         
         let bar = TMBar.ButtonBar()
-        bar.backgroundColor = .white
-        bar.backgroundView.style = .blur(style: .extraLight)
+        bar.backgroundColor = .black
+        bar.backgroundView.style = .blur(style: .dark)
         bar.layout.transitionStyle = .snap
         bar.layout.contentMode = .fit
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
         
         bar.buttons.customize { (button) in
-            button.tintColor = .gray
-            button.selectedTintColor = .black
+            button.tintColor = .white
+            button.selectedTintColor = .yellow
         }
         
         bar.indicator.weight = .medium
-        bar.indicator.tintColor = .black
+        bar.indicator.tintColor = .yellow
         addBar(bar, dataSource: self, at: .top)
     }
     
