@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncz-2v-MOz">
-                                <rect key="frame" x="103.5" y="620" width="207" height="70"/>
+                                <rect key="frame" x="103.5" y="627" width="207" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="OAb-rT-ljy"/>
                                 </constraints>
@@ -29,10 +29,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dtn-2A-huq">
-                                <rect key="frame" x="63.5" y="695" width="287" height="87"/>
+                                <rect key="frame" x="63.5" y="702" width="287" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="287" id="2dt-YL-zpZ"/>
-                                    <constraint firstAttribute="height" constant="87" id="eH7-MU-vux"/>
+                                    <constraint firstAttribute="height" constant="80" id="eH7-MU-vux"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -44,19 +44,11 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MovieWiki_AppIcon_negative" translatesAutoresizingMaskIntoConstraints="NO" id="rJi-yr-hbj">
-                                <rect key="frame" x="48" y="194" width="318" height="318"/>
+                                <rect key="frame" x="44.5" y="194" width="325" height="325"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rJi-yr-hbj" secondAttribute="height" multiplier="1:1" id="kLj-NO-lcu"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsl-w6-xnf">
-                                <rect key="frame" x="171" y="790" width="73" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
-                                <connections>
-                                    <action selector="logout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ut-j0-k8Q"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,13 +56,9 @@
                             <constraint firstItem="rJi-yr-hbj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="7G5-5T-FZV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Dtn-2A-huq" secondAttribute="bottom" constant="80" id="7Vc-p0-NKf"/>
                             <constraint firstItem="ncz-2v-MOz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HvE-zx-BFp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hsl-w6-xnf" secondAttribute="trailing" constant="170" id="Qnr-AS-l54"/>
                             <constraint firstItem="rJi-yr-hbj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RfO-l8-56n"/>
                             <constraint firstItem="Dtn-2A-huq" firstAttribute="top" secondItem="ncz-2v-MOz" secondAttribute="bottom" constant="5" id="XIw-Zo-YBU"/>
-                            <constraint firstItem="hsl-w6-xnf" firstAttribute="top" secondItem="Dtn-2A-huq" secondAttribute="bottom" constant="8" symbolic="YES" id="bmX-SM-34F"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hsl-w6-xnf" secondAttribute="bottom" constant="41" id="dxl-z3-2DI"/>
                             <constraint firstItem="Dtn-2A-huq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eyn-rD-3hf"/>
-                            <constraint firstItem="hsl-w6-xnf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="171" id="hma-TL-nW0"/>
                             <constraint firstItem="ncz-2v-MOz" firstAttribute="top" secondItem="rJi-yr-hbj" secondAttribute="bottom" constant="108" id="upa-0Q-lJD"/>
                         </constraints>
                     </view>
@@ -440,9 +428,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pZd-Fp-bjI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pZd-Fp-bjI">
                                 <rect key="frame" x="0.0" y="194" width="414" height="702"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" systemColor="opaqueSeparatorColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1c2-dm-QtB">
                                 <rect key="frame" x="342" y="119" width="52" height="30"/>
@@ -493,6 +481,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kfj-JT-UGu">
                                         <rect key="frame" x="0.0" y="0.0" width="305.5" height="34"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -583,6 +572,9 @@
         <image name="blank" width="28" height="24"/>
         <image name="kakao_login_medium_narrow" width="183" height="45"/>
         <image name="naver_login" width="878" height="284"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

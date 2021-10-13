@@ -37,6 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         print(UserDefaultsKey.isLoggedIn)
         // Login 확인
         if UserDefaultsKey.isLoggedIn {
+            print("gotoTabVC")
             vc = storyboard.instantiateViewController(withIdentifier: "TabVC") as! TabViewController
         } else { // 로그인을 하지 않았을경우
             vc = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController

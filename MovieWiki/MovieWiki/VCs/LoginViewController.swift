@@ -80,11 +80,11 @@ class LoginViewController: UIViewController {
         loginInstance?.delegate = self
         loginInstance?.requestThirdPartyLogin()
     }
-    
-    @IBAction func logout(_ sender: Any) {
-        loginInstance?.requestDeleteToken()
-    }
-    
+//    
+//    @IBAction func logout(_ sender: Any) {
+//        loginInstance?.requestDeleteToken()
+//    }
+//    
     private func getNaverInfo() {
         guard let isValidAccessToken = loginInstance?.isValidAccessTokenExpireTimeNow() else { return }
         

@@ -30,13 +30,24 @@ class MyPageViewController: UIViewController {
         tableView.estimatedRowHeight = 400
         setupTableView()
         tableView.reloadData()
+        
+        let header = UIView(frame: CGRect(x:0, y:0, width: view.frame.size.width, height: 50))
+        header.backgroundColor = .black
+        
+        let headerLabel = UILabel(frame: header.bounds)
+        headerLabel.text = "Review 목록(\(r.reviewArray.count))"
+        headerLabel.textAlignment = .center
+        header.addSubview(headerLabel)
+        
+        tableView.tableHeaderView = header
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.estimatedRowHeight = 500
+        self.tableView.estimatedRowHeight = 500
         self.tableView.rowHeight = UITableView.automaticDimension
+        
     }
     
     @IBAction func logout(_ sender: Any) {
@@ -50,6 +61,7 @@ class MyPageViewController: UIViewController {
                 print("unlink() success.")
             }
         }
+
         
         UserDefaultsKey.isLoggedIn = false
     }
