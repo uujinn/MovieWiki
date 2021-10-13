@@ -6,11 +6,21 @@
 //
 
 import UIKit
+import Alamofire
+import Kingfisher
 
 class HomeViewController: UIViewController, CollectionViewCellDelegate{
     
     @IBOutlet weak var tableView: UITableView!
 
+    let url : [String] = ["https://api.themoviedb.org/3/movie/popular?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR", "https://api.themoviedb.org/3/movie/now_playing?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR", "https://api.themoviedb.org/3/movie/upcoming?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR"]
+    
+    let params: Parameters = [
+        "api_key": "c54f2606f5cf4a0e9fd4dd02d158bf13",
+        "language": "ko-KR",
+        "page": "1"
+    ]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

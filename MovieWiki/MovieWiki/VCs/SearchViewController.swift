@@ -51,7 +51,13 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let arr = arr[indexPath.row]
         idx = arr["id"].intValue
-        print("selected: \(indexPath.row)")
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailVC") as? DetailViewController else { return }
+ 
+        vc.movieId = idx
+
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: false)
     }
     @IBAction func pressedToSearch(_ sender: Any) {
         let searchText = searchTextField.text
