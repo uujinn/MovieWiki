@@ -52,7 +52,6 @@ class ReviewViewController: UIViewController {
     func cosmos(){
         self.cosmosView.settings.updateOnTouch = true
         self.cosmosView.settings.fillMode = .half
-        self.cosmosView.settings.starSize = 40
-        self.cosmosView.settings.starMargin = 5
+        self.cosmosView.settings.starSize = 45
     }
 }

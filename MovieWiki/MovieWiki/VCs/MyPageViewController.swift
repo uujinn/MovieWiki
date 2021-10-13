@@ -18,6 +18,8 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var userImg: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
     
+    let r = Review.shared
+    
     let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
 
     override func viewWillAppear(_ animated: Bool) {
@@ -25,12 +27,14 @@ class MyPageViewController: UIViewController {
         userLabel.text = UserDefaults.standard.string(forKey: "name")
         userImg.kf.setImage(with: UserDefaults.standard.url(forKey: "img"))
         
+        
+        setupTableView()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func logout(_ sender: Any) {
@@ -48,4 +52,39 @@ class MyPageViewController: UIViewController {
         UserDefaultsKey.isLoggedIn = false
     }
     
+}
+
+extension MyPageViewController: UITableViewDataSource, UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return r.reviewArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell") as? ReviewCell else{
+            return UITableViewCell()
+        }
+        
+        cell.reviewTitle.text = r.reviewArray[indexPath.row].movieTitle
+        cell.reviewImg.kf.setImage(with: URL(string: r.reviewArray[indexPath.row].movieImgPath))
+        cell.reviewText.text = r.reviewArray[indexPath.row].reviewMsg
+        cell.reviewRating.text = String(r.reviewArray[indexPath.row].rating)
+        
+        print(r.reviewArray)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250
+    }
+    private func setupTableView(){
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        let cell = UINib(nibName: "ReviewCell", bundle: nil)
+        self.tableView.register(cell, forCellReuseIdentifier: "ReviewCell")
+    }
+    
+    
+
 }
