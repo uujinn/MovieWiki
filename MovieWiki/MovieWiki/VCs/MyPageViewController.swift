@@ -27,7 +27,7 @@ class MyPageViewController: UIViewController {
         userLabel.text = UserDefaults.standard.string(forKey: "name")
         userImg.kf.setImage(with: UserDefaults.standard.url(forKey: "img"))
         
-        
+        tableView.estimatedRowHeight = 400
         setupTableView()
         tableView.reloadData()
     }
@@ -35,6 +35,8 @@ class MyPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.estimatedRowHeight = 500
+        self.tableView.rowHeight = UITableView.automaticDimension
     }
     
     @IBAction func logout(_ sender: Any) {
@@ -75,8 +77,13 @@ extension MyPageViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        return UITableView.automaticDimension
     }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 250
+//    }
+    
     private func setupTableView(){
         self.tableView.delegate = self
         self.tableView.dataSource = self
