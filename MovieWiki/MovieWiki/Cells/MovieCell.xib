@@ -42,7 +42,7 @@
                 <outlet property="movieImage" destination="jwB-CX-Wmv" id="aBo-9R-P1O"/>
                 <outlet property="movieLabel" destination="rr0-31-5h4" id="WVy-XN-zxT"/>
             </connections>
-            <point key="canvasLocation" x="-142.02898550724638" y="56.584821428571423"/>
+            <point key="canvasLocation" x="-149.27536231884059" y="57.924107142857139"/>
         </collectionViewCell>
     </objects>
     <resources>

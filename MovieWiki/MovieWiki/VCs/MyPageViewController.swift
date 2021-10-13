@@ -29,7 +29,7 @@ class MyPageViewController: UIViewController {
         
         
         setupTableView()
-        
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {

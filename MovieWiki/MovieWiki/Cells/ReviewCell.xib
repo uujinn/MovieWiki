@@ -75,7 +75,7 @@
                 <outlet property="reviewText" destination="w1a-Dg-Sa4" id="z1L-3d-x5B"/>
                 <outlet property="reviewTitle" destination="cpw-to-KdB" id="uWm-59-ljj"/>
             </connections>
-            <point key="canvasLocation" x="118.84057971014494" y="164.39732142857142"/>
+            <point key="canvasLocation" x="112" y="152"/>
         </tableViewCell>
     </objects>
     <resources>
