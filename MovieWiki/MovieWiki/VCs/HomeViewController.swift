@@ -8,11 +8,18 @@
 import UIKit
 import Alamofire
 import Kingfisher
+import SwiftyJSON
 
 class HomeViewController: UIViewController, CollectionViewCellDelegate{
     
     @IBOutlet weak var tableView: UITableView!
-
+    private var arr : [JSON] = []
+    
+    let movieModel = MovieModel.shared
+    
+    let dispatchGroup = DispatchGroup()
+    let queue = DispatchQueue(label: "queue", qos: .default, attributes: .concurrent)
+    
     let url : [String] = ["https://api.themoviedb.org/3/movie/popular?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR", "https://api.themoviedb.org/3/movie/now_playing?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR", "https://api.themoviedb.org/3/movie/upcoming?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR"]
     
     let params: Parameters = [
@@ -20,14 +27,16 @@ class HomeViewController: UIViewController, CollectionViewCellDelegate{
         "language": "ko-KR",
         "page": "1"
     ]
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getMovieList()
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
         setupTableView()
+
     }
     
     func collectionView(collectionviewcell: MovieCell?, index: Int, didTappedInTableViewCell: TableViewTitleCell) {
@@ -58,6 +67,45 @@ class HomeViewController: UIViewController, CollectionViewCellDelegate{
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: false)
     }
+    
+    func getMovieList(){
+
+        DispatchQueue.global().async{
+            AF.request(self.url[0]).responseJSON { [self] (response) in
+                if let value = response.value{
+                    let json = JSON(value)
+                    arr = json["results"].arrayValue
+                    movieModel.popular = arr
+                }
+            }
+            
+            AF.request(self.url[1]).responseJSON { [self] (response) in
+                if let value = response.value{
+                    let json = JSON(value)
+                    arr = json["results"].arrayValue
+                    movieModel.nowPlaying = arr
+                }
+            }
+            
+            AF.request(self.url[2]).responseJSON { [self] (response) in
+                if let value = response.value{
+                    let json = JSON(value)
+                    arr = json["results"].arrayValue
+                    movieModel.latest = arr
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                        setupTableView()
+                    }
+                }
+            }
+        
+        }
+        
+        
+
+        
+        
+    }
 
 }
 
@@ -70,6 +118,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewTitleCell") as? TableViewTitleCell else{
             return UITableViewCell()
         }
+        
         switch indexPath.row {
         case 0:
             cell.titleLabel.text = "인기"
@@ -87,6 +136,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
         }
 
         cell.cellDelegate = self
+        cell.setCell()
         return cell
     }
     
@@ -99,11 +149,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
     
     private func setupTableView(){
             // Register the xib for tableview cell
-            tableView.delegate = self
-            tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
 
-            let cell = UINib(nibName: "TableViewTitleCell", bundle: nil)
-            self.tableView.register(cell, forCellReuseIdentifier: "TableViewTitleCell")
+        let cell = UINib(nibName: "TableViewTitleCell", bundle: nil)
+        self.tableView.register(cell, forCellReuseIdentifier: "TableViewTitleCell")
+
     }
     
 }

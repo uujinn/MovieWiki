@@ -18,21 +18,9 @@ class LoginViewController: UIViewController {
     // 네이버 로그인
     let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
     
-    
-    let url : [String] = ["https://api.themoviedb.org/3/movie/popular?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR", "https://api.themoviedb.org/3/movie/now_playing?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR", "https://api.themoviedb.org/3/movie/upcoming?api_key=c54f2606f5cf4a0e9fd4dd02d158bf13&language=ko-KR&page=1&region=KR"]
-    
-    let params: Parameters = [
-        "api_key": "c54f2606f5cf4a0e9fd4dd02d158bf13",
-        "language": "ko-KR",
-        "page": "1"
-    ]
-    
-    private var arr : [JSON] = []
-    
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        getMovieList()
     }
     
     @IBAction func kakaoLogin(_ sender: Any) {
@@ -135,37 +123,7 @@ class LoginViewController: UIViewController {
         
     }
     
-    func getMovieList(){
-        AF.request(url[0]).responseJSON { [self] (response) in
-            if let value = response.value{
-                let json = JSON(value)
-                arr = json["results"].arrayValue
-                let movieModel = MovieModel.shared
-                movieModel.popular = arr
-//                print(json)
-            }
-        }
-        
-        AF.request(url[1]).responseJSON { [self] (response) in
-            if let value = response.value{
-                let json = JSON(value)
-                arr = json["results"].arrayValue
-                let movieModel = MovieModel.shared
-                movieModel.nowPlaying = arr
-            }
-        }
-        
-        AF.request(url[2]).responseJSON { [self] (response) in
-            if let value = response.value{
-                let json = JSON(value)
-                arr = json["results"].arrayValue
-                let movieModel = MovieModel.shared
-                movieModel.latest = arr
-                
-            }
-        }
-        
-    }
+
 }
 
 extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
