@@ -9,7 +9,7 @@ import UIKit
 import Cosmos
 import Kingfisher
 
-class ReviewViewController: UIViewController {
+class ReviewViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var cosmosView: CosmosView!
     
@@ -29,7 +29,11 @@ class ReviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        reviewMsg.layer.cornerRadius = 10
+        placeholderSetting()
+        // 텍스트뷰 Padding
+        reviewMsg.textContainerInset = UIEdgeInsets(top: 25, left: 15, bottom: 15, right: 15);
         // 별점
         cosmos()
 
@@ -48,10 +52,52 @@ class ReviewViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
    
+    // Placeholder 설정
+    func placeholderSetting() {
 
+        reviewMsg.delegate = self
+        reviewMsg.text = "리뷰를 작성해주세요."
+        reviewMsg.textColor = UIColor.lightGray
+
+    }
+    
+    
+    // TextView Place Holder
+    func textViewDidBeginEditing(_ textView: UITextView) {
+
+        if reviewMsg.textColor == UIColor.lightGray {
+            reviewMsg.text = nil
+            reviewMsg.textColor = UIColor.white
+        }
+
+    }
+    
+    // TextView Place Holder
+    func textViewDidEndEditing(_ textView: UITextView) {
+
+        if reviewMsg.text.isEmpty {
+            reviewMsg.text = "리뷰를 작성해주세요."
+            reviewMsg.textColor = UIColor.lightGray
+        }
+
+    }
+
+    func makeSpace(tf: UITextView){
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 7
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 18, weight: .regular),
+            .foregroundColor: UIColor.lightGray,
+            .paragraphStyle: style
+        ]
+        tf.attributedText = NSAttributedString(string: reviewMsg.text, attributes: attributes)
+    }
+    
     func cosmos(){
         self.cosmosView.settings.updateOnTouch = true
         self.cosmosView.settings.fillMode = .half
         self.cosmosView.settings.starSize = 45
     }
+    
+    
 }

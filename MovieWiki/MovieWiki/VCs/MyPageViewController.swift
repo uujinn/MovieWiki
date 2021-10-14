@@ -48,6 +48,13 @@ class MyPageViewController: UIViewController {
         self.tableView.estimatedRowHeight = 500
         self.tableView.rowHeight = UITableView.automaticDimension
         
+        
+        userImg.layer.cornerRadius = userImg.frame.height/2
+        userImg.layer.borderWidth = 1
+        userImg.layer.borderColor = UIColor.clear.cgColor
+        // 뷰의 경계에 맞춰준다
+        userImg.clipsToBounds = true
+        
     }
     
     @IBAction func logout(_ sender: Any) {
