@@ -36,16 +36,7 @@ class MyPageViewController: UIViewController, removeDelegate {
         tableView.estimatedRowHeight = 400
         setupTableView()
         tableView.reloadData()
-        
-        let header = UIView(frame: CGRect(x:0, y:0, width: view.frame.size.width, height: 50))
-        header.backgroundColor = .black
-        
-        let headerLabel = UILabel(frame: header.bounds)
-        headerLabel.text = "Review 목록(\(r.reviewArray.count))"
-        headerLabel.textAlignment = .center
-        header.addSubview(headerLabel)
-        
-        tableView.tableHeaderView = header
+        setHeader()
     }
     
     override func viewDidLoad() {
@@ -65,6 +56,7 @@ class MyPageViewController: UIViewController, removeDelegate {
     
     func selectedInfoBtn(index: Int) {
         r.reviewArray.remove(at: index)
+        setHeader()
         tableView.reloadData()
     }
     
@@ -84,6 +76,17 @@ class MyPageViewController: UIViewController, removeDelegate {
         UserDefaultsKey.isLoggedIn = false
     }
     
+    func setHeader(){
+        let header = UIView(frame: CGRect(x:0, y:0, width: view.frame.size.width, height: 50))
+        header.backgroundColor = .black
+        
+        let headerLabel = UILabel(frame: header.bounds)
+        headerLabel.text = "Review 목록(\(r.reviewArray.count))"
+        headerLabel.textAlignment = .center
+        header.addSubview(headerLabel)
+        
+        tableView.tableHeaderView = header
+    }
 }
 
 extension MyPageViewController: UITableViewDataSource, UITableViewDelegate{
