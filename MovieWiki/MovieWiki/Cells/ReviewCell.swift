@@ -13,6 +13,11 @@ class ReviewCell: UITableViewCell {
     @IBOutlet weak var reviewRating: UILabel!
     @IBOutlet weak var reviewTitle: UILabel!
     @IBOutlet weak var reviewText: UILabel!
+    
+    let movieModel = MovieModel.shared
+    
+    var index = 0
+    var delegate: removeDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,4 +29,7 @@ class ReviewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func toRemove(_ sender: Any) {
+        self.delegate?.selectedInfoBtn(index: index)
+    }
 }

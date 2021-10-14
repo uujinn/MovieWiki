@@ -12,7 +12,13 @@ import KakaoSDKUser
 import KakaoSDKCommon
 import Kingfisher
 
-class MyPageViewController: UIViewController {
+protocol removeDelegate {
+    func selectedInfoBtn(index: Int)
+}
+
+
+class MyPageViewController: UIViewController, removeDelegate {
+    
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userImg: UIImageView!
@@ -57,6 +63,11 @@ class MyPageViewController: UIViewController {
         
     }
     
+    func selectedInfoBtn(index: Int) {
+        r.reviewArray.remove(at: index)
+        tableView.reloadData()
+    }
+    
     @IBAction func logout(_ sender: Any) {
         loginInstance?.requestDeleteToken()
         
@@ -92,6 +103,8 @@ extension MyPageViewController: UITableViewDataSource, UITableViewDelegate{
         cell.reviewRating.text = String(r.reviewArray[indexPath.row].rating)
         
         print(r.reviewArray)
+        cell.index = indexPath.row
+        cell.delegate = self
         return cell
     }
     
