@@ -18,4 +18,5 @@ target 'MovieWiki' do
 
   pod 'Tabman', '~> 2.11'
   pod 'Cosmos', '~> 23.0'
+  pod 'SkeletonView'
 end

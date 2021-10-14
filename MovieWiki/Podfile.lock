@@ -21,6 +21,7 @@ PODS:
   - MSPeekCollectionViewDelegateImplementation (3.2.0)
   - naveridlogin-sdk-ios (4.1.3)
   - Pageboy (3.6.2)
+  - SkeletonView (1.25.1)
   - SwiftyJSON (5.0.1)
   - Tabman (2.11.1):
     - Pageboy (~> 3.6.0)
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - Kingfisher (~> 7.0)
   - MSPeekCollectionViewDelegateImplementation
   - naveridlogin-sdk-ios
+  - SkeletonView
   - SwiftyJSON
   - Tabman (~> 2.11)
 
@@ -50,6 +52,7 @@ SPEC REPOS:
     - MSPeekCollectionViewDelegateImplementation
     - naveridlogin-sdk-ios
     - Pageboy
+    - SkeletonView
     - SwiftyJSON
     - Tabman
 
@@ -65,9 +68,10 @@ SPEC CHECKSUMS:
   MSPeekCollectionViewDelegateImplementation: be35a217bd302976a9e4476151be992c1f150127
   naveridlogin-sdk-ios: b9d7c20677981177ed994ecb1c8c2b49f223277d
   Pageboy: cf121b9dd48c63f3f281b2a9ec93d02e0f23879b
+  SkeletonView: 77079530e1348a72f48b79ae30dcb966c1b18b6a
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Tabman: 792ac76fd1ec95af175c93db880a3c47cabedc91
 
-PODFILE CHECKSUM: 1f6f96fbaacce9bd137afd1df691dfafddba1764
+PODFILE CHECKSUM: f56b1e8656d961ef6009a6c82b8428293079c157
 
 COCOAPODS: 1.11.2
