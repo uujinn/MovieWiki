@@ -142,13 +142,3 @@ struct SpokenLanguage: Codable {
         case name
     }
 }
-
-
-
-
-//https://github.com/bipsa/Movies/blob/ecd29976184511e163a0c71469939207a97f939f/Movies/Classes/Api/TheMovieDB.swift
-//https://github.com/StevenRock/MovieCheckList/blob/24885551d39f3e25d2b9b8cc68017be2df6062f6/MovieCheckList/Model/MovieData.swift
-//https://github.com/Maksim-Lipenka/whatToWatch/blob/f81d10df9d5e64549702bedd772ccca36dadef01/whatToWatch/Models/MovieResponse.swift
-//https://github.com/melisaozturk/MovieDBProgrammaticallyStoryboard/blob/211fcca5bb44649064db2a19d05c442cc5cfe07f/YemeksepetiMovieDB/Model/MovieDetailModel.swift
-//https://github.com/bipsa/Movies/blob/ecd29976184511e163a0c71469939207a97f939f/Movies/Classes/Api/TheMovieDBStructures.swift
-//https://github.com/PunitSV/Moviez/blob/2234350f11f90ce7d980cb90d0eb0dac1ac9d366/Moviez/Models/Movie.swift
