@@ -39,8 +39,6 @@ class DetailViewController: UIViewController {
         
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReviewVC") as? ReviewViewController else { return }
 
-//        self.navigationController?.pushViewController(vc, animated: true)
-
         vc.movieTitle = movieTitle.text!
         vc.movieImgPath = poster_path
         vc.modalPresentationStyle = .fullScreen

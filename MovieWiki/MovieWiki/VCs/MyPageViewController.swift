@@ -76,6 +76,7 @@ class MyPageViewController: UIViewController, removeDelegate {
         UserDefaultsKey.isLoggedIn = false
     }
     
+    
     func setHeader(){
         let header = UIView(frame: CGRect(x:0, y:0, width: view.frame.size.width, height: 50))
         header.backgroundColor = .black
