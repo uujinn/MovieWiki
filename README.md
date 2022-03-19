@@ -5,8 +5,8 @@
 ### 로그인
 <img src = "https://user-images.githubusercontent.com/70887135/159129671-70c63470-d2a0-400e-a9cf-f1b3979e91e3.png" width="25%" height="25%">
 
-- Kakao Login 연결
-- Naver Login 연결
+- `Kakao Login` 연결
+- `Naver Login` 연결
 
 
 ### 홈
